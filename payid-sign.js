@@ -34,13 +34,13 @@ function address_from_public_key( network, publicKey ) {
 function create_signed_payid( payid, network, environment, familySeedOrSecp256k1PrivateKey ) {
     assert(network == 'xrpl' || network == 'xrp' || network == 'btc' || network == 'eth', 'network must be xrpl, btc or eth')
     assert(environment == 'testnet' || environment == 'mainnet', 'environment must be testnet or mainnet')
-    assert(familySeedOrSecp256k1PrivateKey.slice(1) == 's' || familySeedOrSecp256k1PrivateKey.length == 64, 'familySeedOrSecp256k1PrivateKey must be either 64 hex digits or a family seed starting with a lowercase s')
+    assert(familySeedOrSecp256k1PrivateKey.slice(0,1) == 's' || familySeedOrSecp256k1PrivateKey.length == 64, 'familySeedOrSecp256k1PrivateKey must be either 64 hex digits or a family seed starting with a lowercase s')
     network = network.toLowerCase()
     environment = environment.toLowerCase()
     if (network == 'xrp') network = 'xrpl'
     var publicKey = null
     var privateKey = familySeedOrSecp256k1PrivateKey
-    if (familySeedOrSecp256k1PrivateKey.slice(1) == 's') { // if this is an xrpl seed then process using ripple-keypairs
+    if (familySeedOrSecp256k1PrivateKey.slice(0,1) == 's') { // if this is an xrpl seed then process using ripple-keypairs
         keys = kp.deriveKeypair(familySeedOrSecp256k1PrivateKey)
         privateKey = keys.privateKey
         publicKey = keys.publicKey

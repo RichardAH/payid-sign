@@ -1,6 +1,6 @@
 {
   "name": "payid-sign",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Signing extensions for PayID",
   "main": "payid-sign.js",
   "dependencies": {
