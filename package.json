@@ -1,0 +1,28 @@
+{
+  "name": "payid-sign",
+  "version": "1.0.0",
+  "description": "Signing extensions for PayID",
+  "main": "payid-sign.js",
+  "dependencies": {
+    "ripple-address-codec": "4.1.1",
+    "secp256k1": "4.0.1",
+    "ripple-keypairs": "1.0.1",
+    "bitcoinjs-lib": "5.1.10",
+    "ethereum-public-key-to-address": "0.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codetsunami/payid-sign.git"
+  },
+  "keywords": [
+    "xrp",
+    "ripple",
+    "payid"
+  ],
+  "author": "Richard Holland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codetsunami/payid-sign/issues"
+  },
+  "homepage": "https://github.com/codetsunami/payid-sign#readme"
+}
